@@ -1,17 +1,10 @@
-// rCBafqJTrxUTFK9rBlem9uvYUHA6D3LE API KEY!!!!
 
-import Giphy from '/giphy.js';
+import GiphyClient from '/js/giphyClient.js';
 
-let l = new Giphy();
-
-
-// let myApp = {
-//     trendingUrl : "http://api.giphy.com/v1/gifs/trending?",
-//     getSearchForUrl : (phrase) => `http://api.giphy.com/v1/gifs/search?q=${phrase}`
-// }
+let l = new GiphyClient();
 
 let trendingUrl = l.trendingUrl;
-let searchForUrl = l.getSearchForUrl("hello");
+let searchForUrl = l.getSearchForUrl("HELLO");
 console.log(trendingUrl);
 console.log(searchForUrl);
 
