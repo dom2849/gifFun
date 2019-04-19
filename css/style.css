@@ -1,19 +1,14 @@
-
-:root{
-    --light-blue: #add8e6;
-}
 body{
-    background: #333;
+    background: #f4f4f4;
 }
 
 .container{
-    max-width: 1000px;
+    max-width: 1300px;
     margin: auto;
 }
 
 .main-navigation__logo{
     text-transform: uppercase;
-    color: #fff;
 }
 
 .main-navigation__home-button{
@@ -32,7 +27,7 @@ body{
     border-radius: 5px;
     font-size: 1.2rem;
     outline: none;
-    border: 1px solid #000;
+    border: 1px solid #c3c3c3;
 }
 
 .main-navigation__search-icon{
@@ -52,10 +47,29 @@ body{
 
 @media (any-hover: hover){
     .main-navigation__logo:hover{
-        color: var(--light-blue);
+        opacity: .6;
     }
     
     .main-navigation__search-icon:hover{
         opacity: .6;
     }
+}
+
+
+.gifs{
+    padding: 2rem;
+}
+/* Masonry grid */
+
+.masonry-grid{
+    columns: 4;
+    column-width: 250px;
+}
+
+.masonry-grid__grid-item{
+    margin-bottom: 1rem;
+}
+
+.masonry-grid__image{
+    width: 100%;
 }
