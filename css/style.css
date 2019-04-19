@@ -7,6 +7,10 @@ body{
     margin: auto;
 }
 
+.section{
+    padding: 1rem;
+}
+
 .main-navigation__logo{
     text-transform: uppercase;
 }
@@ -58,13 +62,11 @@ body{
 
 /* Gifs */
 
-.gifs{
-    padding: 1rem;
-}
 
 .gifs__title{
-    margin-top: .5rem;
-    font-size: 2rem;
+    margin-top: 0rem;
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
 }
 
 .gifs__masonry-grid{
@@ -78,4 +80,9 @@ body{
 
 .gifs__image{
     width: 100%;
+}
+
+.gifs__search-message{
+    font-size: 1.5rem;
+    text-align: center
 }
