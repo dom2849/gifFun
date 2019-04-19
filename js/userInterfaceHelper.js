@@ -4,18 +4,18 @@ export default function UserInterfaceHelper(){
 
 
 UserInterfaceHelper.prototype.appendMasonryItem = function(imageUrl){
-    let masonryGrid = document.querySelector(".masonry-grid");
-    let masonryGridItem = createMasonryGridItem(imageUrl);
-    masonryGrid.appendChild(masonryGridItem);
+    let masonryGrid = document.querySelector(".gifs__masonry-grid");
+    let gridItem = createGridItem(imageUrl);
+    masonryGrid.appendChild(gridItem);
 }
 
-function createMasonryGridItem(imageUrl){
+function createGridItem(imageUrl){
     let gridItem = document.createElement("div");
     let gridImage = document.createElement("img");
     
-    gridItem.classList = "masonry-grid__grid-item";
+    gridItem.classList = "gifs__grid-item";
     gridImage.src = imageUrl;
-    gridImage.classList = "masonry-grid__image"
+    gridImage.classList = "gifs__image"
     
     gridItem.appendChild(gridImage);
     
@@ -23,7 +23,7 @@ function createMasonryGridItem(imageUrl){
 }
 
 UserInterfaceHelper.prototype.clearAllMasonryItems = function(){
-    let masonryGrid = document.querySelector(".masonry-grid");
+    let masonryGrid = document.querySelector(".gifs__masonry-grid");
 
     while (masonryGrid.firstChild){
         masonryGrid.removeChild(masonryGrid.firstChild)

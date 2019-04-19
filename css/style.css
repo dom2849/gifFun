@@ -22,6 +22,7 @@ body{
 }
 
 .main-navigation__search-input{
+    box-sizing: border-box;
     width: 100%;
     padding: 1rem 0 1rem 1rem;
     border-radius: 5px;
@@ -37,16 +38,16 @@ body{
     transform: translateY(-50%);
     right: 0;
     cursor: pointer;
-    padding: 1rem;
+    padding-right: 1.5rem;
 }
 
 .main-navigation__search-icon,
-.main-navigation__logo{
+.main-navigation__home-button{
     transition: .3s;
 }
 
 @media (any-hover: hover){
-    .main-navigation__logo:hover{
+    .main-navigation__home-button:hover{
         opacity: .6;
     }
     
@@ -55,21 +56,26 @@ body{
     }
 }
 
+/* Gifs */
 
 .gifs{
-    padding: 2rem;
+    padding: 1rem;
 }
-/* Masonry grid */
 
-.masonry-grid{
+.gifs__title{
+    margin-top: .5rem;
+    font-size: 2rem;
+}
+
+.gifs__masonry-grid{
     columns: 4;
     column-width: 250px;
 }
 
-.masonry-grid__grid-item{
+.gifs__grid-item{
     margin-bottom: 1rem;
 }
 
-.masonry-grid__image{
+.gifs__image{
     width: 100%;
 }

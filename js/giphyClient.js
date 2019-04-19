@@ -8,18 +8,16 @@ export default function GiphyClient() {
 
 GiphyClient.prototype.fetchData = function (url, offset) {
     let self = this;
-    self.httpsRequest.open('GET', `${url}&api_key=${apiKey}&offset=${offset}`, 
-        false);
-        
-    self.httpsRequest.onload = () => {
-        if (self.httpsRequest.status !== 200){
-            console.log('ERROR');
-        }
-        else{
-            let responseText = self.httpsRequest.responseText;
+    return new Promise (function(resolve, reject) {
+        self.httpsRequest.open('GET', `${url}&api_key=${apiKey}&offset=${offset}`, 
+            true);
             
-            console.log(JSON.parse(responseText));   
+        self.httpsRequest.onload = () => {
+            if (self.httpsRequest.status === 200){
+                resolve(JSON.parse(self.httpsRequest.responseText))
+            }
+            reject('Unable to find url');
         }
-    }
-    self.httpsRequest.send();
+        self.httpsRequest.send();
+    })
 }
