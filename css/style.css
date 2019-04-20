@@ -62,7 +62,6 @@ body{
 
 /* Gifs */
 
-
 .gifs__title{
     margin-top: 0rem;
     margin-bottom: 2rem;
@@ -79,7 +78,11 @@ body{
 }
 
 .gifs__image{
-    width: 100%;
+    --width: 100%;
+}
+
+.gifs__image{
+    width: var(--width);
 }
 
 .gifs__search-message{
