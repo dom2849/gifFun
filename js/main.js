@@ -4,6 +4,7 @@ import UserInterfaceHelper from './userInterfaceHelper.js';
 const giphyClient = new GiphyClient();
 const uiHelper = new UserInterfaceHelper();
 const mobileScreenSize = 768;
+const enterKeyCode = 13;
 
 const myApp = {
     offset: 0,
@@ -21,7 +22,9 @@ function loadEventListeners() {
 }
 
 function handleKeyPress(event) {
-    if (event.code == 'Enter') handleGifSearch();
+    if (event.code == 'Enter' || event.keyCode == enterKeyCode) {
+        handleGifSearch();
+    }
 }
 
 function cleanUp() {
