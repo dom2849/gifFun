@@ -3,6 +3,7 @@ import UserInterfaceHelper from './userInterfaceHelper.js';
 
 const giphyClient = new GiphyClient();
 const uiHelper = new UserInterfaceHelper();
+const mobileScreenSize = 768;
 
 const myApp = { 
     offset : 0,
@@ -60,7 +61,9 @@ function displayGifs(url, offset) {
 
 function addGifs(gifs) {
     gifs.forEach((element) => {
-        let imageUrl = element.images.original.url;
+        let imageUrl = (window.innerWidth <= mobileScreenSize ) ? 
+            element.images.fixed_width.url : element.images.original.url;
+
         uiHelper.appendMasonryItem(imageUrl)
     })
 }
