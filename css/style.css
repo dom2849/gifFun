@@ -71,7 +71,7 @@ body{
 
 .gifs__masonry-grid{
     columns: 4;
-    column-width: 250px;
+    column-width: 200px;
 }
 
 .gifs__grid-item{

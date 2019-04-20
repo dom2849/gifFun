@@ -41,6 +41,6 @@ UserInterfaceHelper.prototype.addMessageContent = function (content) {
 
 UserInterfaceHelper.prototype.removeMessage = function (className) {
     let message = document.querySelector(className);
-
     message.remove();
 }
+

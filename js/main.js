@@ -62,7 +62,7 @@ function displayGifs(url, offset) {
 function addGifs(gifs) {
     gifs.forEach((element) => {
         let imageUrl = (window.innerWidth <= mobileScreenSize ) ? 
-            element.images.fixed_width.url : element.images.original.url;
+            element.images.fixed_width_downsampled.url : element.images.original.url;
 
         uiHelper.appendMasonryItem(imageUrl)
     })
