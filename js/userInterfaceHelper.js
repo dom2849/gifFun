@@ -44,3 +44,14 @@ UserInterfaceHelper.prototype.removeMessage = function (className) {
     message.remove();
 }
 
+UserInterfaceHelper.prototype.addLoader = function () {
+    let loaderWrapper = document.querySelector(".loader-wrapper");
+    let loader = document.createElement("loader");
+    loader.classList = "loader";
+    loaderWrapper.appendChild(loader);
+}
+
+UserInterfaceHelper.prototype.removeLoader = function () {
+    document.querySelector("loader").remove();
+}
+

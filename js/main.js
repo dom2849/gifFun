@@ -5,9 +5,9 @@ const giphyClient = new GiphyClient();
 const uiHelper = new UserInterfaceHelper();
 const mobileScreenSize = 768;
 
-const myApp = { 
-    offset : 0,
-    currentUrl : giphyClient.trendingUrl
+const myApp = {
+    offset: 0,
+    currentUrl: giphyClient.trendingUrl
 };
 
 loadEventListeners()
@@ -20,19 +20,19 @@ function loadEventListeners() {
     document.querySelector(".main-navigation__home-button").addEventListener('click', displayTrendingGifs);
 }
 
-function handleKeyPress(event){
+function handleKeyPress(event) {
     if (event.code == 'Enter') handleGifSearch();
 }
 
-function cleanUp(){
+function cleanUp() {
     uiHelper.clearAllMasonryItems();
     myApp.offset = 0;
     uiHelper.addMessageContent("");
 }
 
-function handleGifSearch(){
+function handleGifSearch() {
     cleanUp();
-    
+
     let userSearch = document.querySelector(".main-navigation__search-input");
     myApp.currentUrl = giphyClient.getSearchForUrl(userSearch.value);
 
@@ -41,7 +41,7 @@ function handleGifSearch(){
     userSearch.value = ''
 }
 
-function displayTrendingGifs(){
+function displayTrendingGifs() {
     cleanUp();
     myApp.currentUrl = giphyClient.trendingUrl;
     displayGifs(myApp.currentUrl, 0);
@@ -49,6 +49,7 @@ function displayTrendingGifs(){
 }
 
 function displayGifs(url, offset) {
+    uiHelper.addLoader();
     giphyClient.fetchData(url, offset)
         .then((gifs) => {
             addGifs(gifs.data);
@@ -57,11 +58,14 @@ function displayGifs(url, offset) {
         .catch((error) => {
             console.log(error);
         })
+        .finally(() => {
+            uiHelper.removeLoader();
+        })
 }
 
 function addGifs(gifs) {
     gifs.forEach((element) => {
-        let imageUrl = (window.innerWidth <= mobileScreenSize ) ? 
+        let imageUrl = (window.innerWidth <= mobileScreenSize) ?
             element.images.fixed_width_downsampled.url : element.images.original.url;
 
         uiHelper.appendMasonryItem(imageUrl)
