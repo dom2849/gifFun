@@ -2,8 +2,8 @@ let apiKey = 'rCBafqJTrxUTFK9rBlem9uvYUHA6D3LE';
 
 export default function GiphyClient() {
     this.httpsRequest = new XMLHttpRequest();
-    this.trendingUrl = "http://api.giphy.com/v1/gifs/trending?",
-    this.getSearchForUrl = (phrase) => `http://api.giphy.com/v1/gifs/search?q=${phrase}`
+    this.trendingUrl = "https://api.giphy.com/v1/gifs/trending?",
+    this.getSearchForUrl = (phrase) => `https://api.giphy.com/v1/gifs/search?q=${phrase}`
 }
 
 GiphyClient.prototype.fetchData = function (url, offset) {

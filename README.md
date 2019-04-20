@@ -1,6 +1,6 @@
 GIFFUN
 ======
-A recreation of the [giphy website](https://giphy.com/trending-gifs).
+A recreation of the [GIPHY website](https://giphy.com/trending-gifs).
 
 Built With
 ------
